@@ -12,4 +12,9 @@ public class Customer{
         this.policyType=policyType;
         this.premium=premium;
     }
+
+    public override string ToString()
+    {
+        return $"Id :{id} Name : {name} Policy Type : {policyType} Premium : {premium}";
+    }
 }
