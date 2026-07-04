@@ -34,4 +34,11 @@ public class UImanager
 
         return newCustomer;
     }
+
+    public int getId()
+    {
+        Console.WriteLine("Enter the id : ");
+        int id=int.Parse(Console.ReadLine());
+        return id;
+    }
 }

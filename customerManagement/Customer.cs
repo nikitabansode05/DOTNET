@@ -15,6 +15,20 @@ public class Customer{
 
     public override string ToString()
     {
-        return $"Id :{id} Name : {name} Policy Type : {policyType} Premium : {premium}";
+        return $"Id :{id} \nName : {name} \nPolicy Type : {policyType} \nPremium : {premium}";
+    }
+
+    public override int GetHashCode()
+    {
+        return id.GetHashCode();
+    }
+
+    public override bool Equals(object obj)
+    {
+       if(obj is Customer other)
+        {
+            return this.id==other.id;
+        }
+        return false;
     }
 }

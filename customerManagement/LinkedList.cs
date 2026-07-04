@@ -1,54 +1,71 @@
 using System.Reflection;
 
-public class LinkedList
+public class LinkedList<T>
 {
-    public Node head{get;set;}
+    public Node<T> head{get;set;}
 
     public LinkedList()
     {
         head=null;
     }
-    public void insert(Customer data)
+    public void insert(T data)
     {
         if (head == null)
         {
-            head=new Node();
+            head=new Node<T>();
             head.data=data;
             head.next=null;
         }
         else
         {
-            Node current=head;
+            Node<T> current=head;
             while (current.next!= null)
             {
                 current=current.next;
             }
-            Node newNode=new Node();
+            Node<T> newNode=new Node<T>();
             newNode.data=data;
             newNode.next=null;
             current.next=newNode;
         }
     }
 
-    public void update(Customer previousData,Customer updatedData)
+    // public void update(T currentData,T updatedData)
+    // {
+    //     Node<T> current=head;
+    //     while (current != null)
+    //     {
+    //         if (EqualityComparer<T>.Default.Equals(current.data, currentData))
+    //         {
+    //             current.data=updatedData;
+    //             break;
+    //         }
+    //         current=current.next;
+    //     }
+    // }
+
+    public void update(T oldData, T newData)
     {
-        Node current=head;
+        Node<T> current = head;
         while (current != null)
         {
-            if (current.data == previousData)
+            if (current.data.Equals(oldData))
             {
-                current.data=updatedData;
+                current.data = newData;
+                break; // stop after updating
             }
-            current=current.next;
+            current = current.next;
         }
     }
 
-    public void delete(Customer data)
+
+    public void delete(T data)
     {
-        Node current=head;
+        Node<T> current=head;
         while (current.next!= null)
         {
-            if (current.next.data == data)
+            //if (EqualityComparer<T>.Default.Equals(current.next.data, data))
+            if(current.next.data.Equals(data))
             {
                 current.next=current.next.next;
             }
@@ -58,7 +75,7 @@ public class LinkedList
 
     public void display()
     {
-        Node currentCustomer=head;
+        Node<T> currentCustomer=head;
         while (currentCustomer != null)
         {
             Console.WriteLine(currentCustomer.data);

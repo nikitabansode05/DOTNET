@@ -1,6 +1,6 @@
 public class Router
 {
-    LinkedList list=new LinkedList();
+    LinkedList<Customer> list=new LinkedList<Customer>();
     UImanager ui=new UImanager();
     Customer customer=new Customer();
     int choice=0;
@@ -22,19 +22,20 @@ public class Router
 
                 case 2:
                     {
-                        Console.WriteLine("Enter the data which is to be replaced : ");
-                        Customer old=ui.getdata();
-                        Console.WriteLine("Enter the data to replaced by : ");
+                        Console.WriteLine("Enter the customer to replaced : ");
+                        Customer previouscustomer=ui.getdata();
+                        Console.WriteLine("Enter the customer to replaced by : ");
                         customer=ui.getdata();
-                        list.update(old,customer);
+                        list.update(previouscustomer,customer);
                     }
               
                 break;
 
                 case 3:
                     {
-                        customer=ui.getdata();
-                        list.delete(customer);
+                        Console.WriteLine("Enter the customer delete : ");
+                        Customer previouscustomer=ui.getdata();
+                        list.delete(previouscustomer);
                     }
                
                 break;
@@ -47,6 +48,6 @@ public class Router
                 Console.WriteLine("Byeeee");
                 break;
             }
-        }while(choice !=7);
+        }while(choice !=5);
     }
 }
