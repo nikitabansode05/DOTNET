@@ -1,6 +1,8 @@
 using System.Reflection;
+using System.Collections;
+using System.Collections.Generic;
 
-public class LinkedList<T>
+public class LinkedList<T>:IEnumerable<T>
 {
     public Node<T> head{get;set;}
 
@@ -52,7 +54,7 @@ public class LinkedList<T>
             if (current.data.Equals(oldData))
             {
                 current.data = newData;
-                break; // stop after updating
+                break;
             }
             current = current.next;
         }
@@ -61,6 +63,16 @@ public class LinkedList<T>
 
     public void delete(T data)
     {
+       
+        if (head == null)
+        {
+            return;
+        }
+        else if (head.data.Equals(data))
+        {
+            head=head.next;
+            return;
+        }
         Node<T> current=head;
         while (current.next!= null)
         {
@@ -68,6 +80,7 @@ public class LinkedList<T>
             if(current.next.data.Equals(data))
             {
                 current.next=current.next.next;
+                return;
             }
             current=current.next;
         }
@@ -81,5 +94,21 @@ public class LinkedList<T>
             Console.WriteLine(currentCustomer.data);
             currentCustomer=currentCustomer.next;
         }
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        Node<T>? current = head;
+
+        while (current != null)
+        {
+            yield return current.data;
+            current = current.next;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
