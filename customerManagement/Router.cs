@@ -1,6 +1,6 @@
 public class Router
 {
-    LinkedList<Customer> list=new LinkedList<Customer>();
+    DoublyLinkedList<Customer> list=new DoublyLinkedList<Customer>();
     UImanager ui=new UImanager();
     Customer customer=new Customer();
     int choice=0;
@@ -15,7 +15,7 @@ public class Router
                 case 1:
                     {
                         customer=ui.getdata();
-                        list.insert(customer);
+                        list.insertfromBack(customer);
                     }
                 
                 break;
@@ -41,7 +41,8 @@ public class Router
                 break;
 
                 case 4:
-                    list.display();
+                    list.displayfromFront();
+                    list.displayfromBack();
                 break;
 
                 default:

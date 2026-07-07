@@ -7,6 +7,7 @@ public class UImanager
         Console.WriteLine("2)Update customer");
         Console.WriteLine("3)Delete customer");
         Console.WriteLine("4)Display customer");
+        Console.WriteLine("5)Exit");
     }
 
     public int getChoice()
