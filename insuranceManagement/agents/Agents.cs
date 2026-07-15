@@ -1,8 +1,6 @@
 public delegate void SalesAgent(Policy policy);
 public delegate void SalesNumberAgent(string policyNo);
-
 public delegate void AssignPolicyAgent(string policyno,Agent agent);
-
 public delegate void DiscountAgent(string policyNumber);
 public delegate void LeadAgent(Customer customer);
 
