@@ -194,5 +194,33 @@
         "IsActive": true,
         "TotalPoliciesPurchased": 2,
         "FullName": "Nikita Patil"
+    },
+    {
+        "CustomerId": 1,
+        "CustomerCode": "CUST001",
+        "FirstName": "Sanika",
+        "LastName": "Mohite",
+        "DateOfBirth": "1995-05-20T00:00:00",
+        "Gender": "Female",
+        "Email": "sanika@example.com",
+        "MobileNumber": "9076543210",
+        "AlternateMobileNumber": "9120456789",
+        "AddressLine1": "Deccan College Road",
+        "AddressLine2": "Near City Mall",
+        "City": "Pune",
+        "State": "Maharashtra",
+        "PostalCode": "411001",
+        "Country": "India",
+        "PanNumber": "ABCDE1234F",
+        "AadhaarNumber": "123456789012",
+        "Occupation": "Software Engineer",
+        "AnnualIncome": 1200000,
+        "NomineeName": "Rahul Patil",
+        "NomineeRelationship": "Brother",
+        "NomineeContactNumber": "9988276655",
+        "RegistrationDate": "2026-07-15T18:21:53.5282574+05:30",
+        "IsActive": true,
+        "TotalPoliciesPurchased": 2,
+        "FullName": "Sanika Mohite"
     }
 ]

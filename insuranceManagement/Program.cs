@@ -117,7 +117,11 @@
                 case 8:
                     {
                         PolicyRepository repo = new PolicyRepository();
-                        repo.Deserialize();
+                        List<Policy> policies=repo.Deserialize();
+                        foreach(Policy p in policies)
+                        {
+                            Console.WriteLine(p);
+                        }
                     }
                     break;
                 case 9:
@@ -125,14 +129,14 @@
                         Customer customer=new Customer{
                         CustomerId = 1,
                         CustomerCode = "CUST001",
-                        FirstName = "Nikita",
-                        LastName = "Patil",
+                        FirstName = "Sanika",
+                        LastName = "Mohite",
                         DateOfBirth = new DateTime(1995, 5, 20),
                         Gender = "Female",
-                        Email = "nikita@example.com",
-                        MobileNumber = "9876543210",
-                        AlternateMobileNumber = "9123456789",
-                        AddressLine1 = "123 MG Road",
+                        Email = "sanika@example.com",
+                        MobileNumber = "9076543210",
+                        AlternateMobileNumber = "9120456789",
+                        AddressLine1 = "Deccan College Road",
                         AddressLine2 = "Near City Mall",
                         City = "Pune",
                         State = "Maharashtra",
@@ -144,7 +148,7 @@
                         AnnualIncome = 1200000m,
                         NomineeName = "Rahul Patil",
                         NomineeRelationship = "Brother",
-                        NomineeContactNumber = "9988776655",
+                        NomineeContactNumber = "9988276655",
                         RegistrationDate = DateTime.Now,
                         IsActive = true,
                         TotalPoliciesPurchased = 2};

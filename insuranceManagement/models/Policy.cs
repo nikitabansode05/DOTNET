@@ -8,8 +8,10 @@ public class Policy
 
     public string Status{get;set;}="Active";
 
-    public Policy()
+    public Policy(){}
+
+    public override string ToString()
     {
-        
+        return $"{PolicyNumber} {CustomerName} {PolicyType}{PolicyAmount} {IsRenewed} {Status}";
     }
 }

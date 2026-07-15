@@ -6,7 +6,6 @@ public class ClaimManager
     public event ClaimsAgent? claimRejected;
     public event ClaimsAgent? claimSettled;
     public event ClaimsAgent? fraudCheckRequested;
-
     public void RegisterClaim(Claim claim)=>claimRegistered?.Invoke(claim);
     public void ApproveClaim(Claim claim)=> claimApproved?.Invoke(claim);
     public void RejectClaim(Claim claim)=> claimRejected?.Invoke(claim);
