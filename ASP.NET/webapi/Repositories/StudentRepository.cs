@@ -40,4 +40,34 @@ public class StudentRepository
             return students;
         }
     }
+
+    public Boolean updateStudent()
+    {
+        using(var conn = GetConnection())
+        {
+            conn.Open();
+            string query="UPDATE students SET name='Dalton' WHERE id=13";
+            using(var cmd=new MySqlCommand(query, conn))
+            {
+                cmd.ExecuteNonQuery();
+            }
+        }
+        return true;
+    }
+
+    public Boolean deleteStudent(int id)
+    {
+        using(var conn = GetConnection())
+        {
+            conn.Open();
+            string query="DELETE FROM students WHERE id=@id";
+
+            using (var cmd=new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@id",id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        return true;
+    }
 }
