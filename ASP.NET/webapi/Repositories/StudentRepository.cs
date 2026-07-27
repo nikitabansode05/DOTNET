@@ -41,14 +41,16 @@ public class StudentRepository
         }
     }
 
-    public Boolean updateStudent()
+    public Boolean updateStudent(int id,string name)
     {
         using(var conn = GetConnection())
         {
             conn.Open();
-            string query="UPDATE students SET name='Dalton' WHERE id=13";
+            string query="UPDATE students SET name=@name WHERE id=@id";
             using(var cmd=new MySqlCommand(query, conn))
             {
+                cmd.Parameters.AddWithValue("@id",id);
+                cmd.Parameters.AddWithValue("@name",name);
                 cmd.ExecuteNonQuery();
             }
         }
