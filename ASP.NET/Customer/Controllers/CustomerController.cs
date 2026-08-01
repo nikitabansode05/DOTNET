@@ -8,4 +8,9 @@ public class CustomerController : Controller
     {
         return View();
     }
+
+    public IActionResult AboutUs()
+    {
+        return View();
+    }
 }
