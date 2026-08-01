@@ -1,0 +1,16 @@
+@using System.Security.Cryptography
+@using Model;
+
+@{
+    List<Customer> customers=new List<Customer>();
+    customers.Add(new Customer{FirstName="Nikita",LastName="Bansode"});
+    customers.Add(new Customer{FirstName="Sanika",LastName="Kulkarni"});
+    customers.Add(new Customer{FirstName="Parth",LastName="Jakson"});
+    
+            foreach(Customer cst in customers){
+                <ol>
+                <li> @cst.FirstName @cst.LastName</li>
+                </ol>
+            }
+   
+}
