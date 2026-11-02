@@ -7,7 +7,7 @@ namespace TFLEcommerce.Repositories;
 public class CartRepository
 {
     private readonly DbConnectionFactory connectionFactory;
-
+    
     public CartRepository(DbConnectionFactory connectionFactory)
     {
         this.connectionFactory=connectionFactory;
